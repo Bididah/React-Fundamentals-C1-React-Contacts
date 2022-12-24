@@ -1,15 +1,16 @@
 import React from 'react'
+import Contact from './Contact'
 
 const ListContact = ({contacts}) => {
 
   
   
   return (
-    <ol className='list-contacts'>
+    <div className='list-contacts'>
       {contacts.map(contact => {
-    return <li key = {contact.id}>{contact.name}</li>
+    return <Contact  contact={contact} />
   })}
-    </ol>
+    </div>
   )
 }
 
