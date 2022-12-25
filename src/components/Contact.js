@@ -1,4 +1,5 @@
 import React from 'react'
+import propTypes  from 'prop-types'
 
 const Contact = ({ contact, onClick }) => {
   return (
@@ -11,6 +12,11 @@ const Contact = ({ contact, onClick }) => {
         <button onClick = {() => onClick(contact)} className='contact-remove'> </button>
     </div>
   )
+}
+
+Contact.propTypes = {
+  contact : propTypes.object.isRequired,
+  onClick : propTypes.func.isRequired
 }
 
 export default Contact
