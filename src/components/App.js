@@ -7,7 +7,8 @@ const App = () => {
   const deleteContact = (contact) => {
     setContacts(contacts.filter(c => c.id !== contact.id ))
   }
-
+  const [query, setQuery] = useState('')
+  
   const [contacts, setContacts] = useState([
     {
       id: "karen",
@@ -29,6 +30,15 @@ const App = () => {
   ])
    
   return <div>
+    <div className="list-contacts-top" >
+      <input 
+      className="search-contacts"
+      placeholder="search"
+      value = {query}
+      onChange = {(e) => setQuery(e.target.value)} />
+
+    </div>
+
     <ListContact  OnDelete = {deleteContact} contacts = {contacts}/>
   </div>;
 };
